@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+          body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fffefe;
+  }
+  .drag-area{
+    border: 2px dashed #fff;
+    height: 340px;
+    width: 600px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #756d66;
+  }
+  .drag-area.active{
+    border: 1px solid #fff;
+
+  }
+  .drag-area .icon{
+    font-size: 70px;
+    color: #fff;
+  }
+  .drag-area header{
+    font-size: 30px;
+    font-weight: 500;
+    color: #fff;
+  }
+  .drag-area span{
+    font-size: 25px;
+    font-weight: 500;
+    color: #fff;
+    margin: 10px 0 15px 0;
+  }
+  .drag-area button{
+    padding: 10px 25px;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background:#e57c53;
+    color:white ;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .drag-area img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  .bu1
+  {
+    margin: auto;
+    width: 180px;
+    margin-top: 30px;
+    height: 50px;
+    border-radius: 5%;
+    cursor: pointer;
+    background-color: #03961c;
+    border: 1px solid #91C9FF;
+    color: #f0f5f1;
+    outline: none;
+    transition: 1s ease-in-out;
+  }
+  
+  .bu1:hover
+  {
+          transition: 1s ease-in-out;
+          background: #5fb16d;
+          stroke-dashoffset: -480;
+  }
+  .buttons
+  {
+      display: flex;
+      flex-direction: row;
+      
+  }
+  .title1
+  {
+      color: rgb(8, 8, 8);
+      text-align: center;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .title2
+  {
+      color: rgb(8, 8, 8);
+      text-align: center;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      font-size: medium;
+      margin-top: 27px;
+  }
+  .textfeild
+  {
+      background-color:#86dbd4 ;
+      margin: auto;
+      position: relative;
+      width: 600px;
+      height: 80px;
+      
+  }
+  .para
+  {
+      color: #1c152a;
+      padding: 30px;
+      font-size: 20px;
+  }
+  .drag-area header,.drag-area span{
+    font-size:large;
+  }
+  .drag-area .f{
+    margin-left: 75px;
+  }
+  </style>
+</head>
+<body>
+  <form action="{{url_for('predict')}}" method="POST" enctype="multipart/form-data">
+    <div>
+        <h1 class="title1">Car Number Plate Detection</h1>
+        
+        <div class="drag-area">
+          <img id="file-ip-1-preview" alt="your image" hidden>
+            <div class="icon"><i class="fas fa-cloud-upload-alt" id="t"></i></div>
+            <header id="tt">Drag & Drop to Upload File</header>
+            <span id="sp">OR</span>
+            <input id="file-ip-1" class="f" type="file" name="file" value="Browse File" onchange="showPreview(event)" autocomplete="off" required>
+           
+        </div>
+        
+        <div class="buttons">
+          <input type="submit" class="bu1" id="but" value="Get Text">
+        </div>
+  
+
+        <h2 class="title2">Text in the Image</h2>
+        <div class="textfeild"><p class="para">{{prediction_text}}</p></div>
+
+    </div>
+    </form>
+    
+</body>
+<script>
+   var dropArea = document.querySelector(".drag-area");
+   var iconn=document.getElementById("t")
+   var inpuel=document.getElementById("file-ip-1")
+   var dropand=document.getElementById("tt")
+   var spantag=document.getElementById("sp")
+   var butt=document.getElementById("but")
+
+
+  function showPreview(event)
+  {
+    if(event.target.files.length>0)
+    {
+      var srcc=URL.createObjectURL(event.target.files[0]);
+      var preview=document.getElementById("file-ip-1-preview");
+      preview.src=srcc;
+     
+      preview.style.display="block";
+      dropArea.classList.add("active");
+      iconn.style.display="none";
+      inpuel.style.display="none"
+      dropand.style.display="none"
+      spantag.style.display="none"
+    }
+  }
+</script>
+</html>
