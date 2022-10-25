@@ -4,3 +4,4 @@ easyocr
 imutils
 opencv-python
 Pillow
+gunicorn
