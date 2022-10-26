@@ -29,5 +29,7 @@ Deployment
 Deploy model on the Heruko platform
 
 ```
-Output of Webpage
+
+###Output of Webpage
+
 ![Screenshot (37)](https://user-images.githubusercontent.com/75174378/198004858-ed9b7f26-63af-4089-8fc2-78778b2ed790.png)
