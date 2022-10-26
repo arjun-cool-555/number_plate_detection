@@ -1,6 +1,5 @@
 import cv2
 import numpy as np
-import imutils
 import easyocr
 from PIL import Image
 from flask import Flask,request,app,render_template
