@@ -1,7 +1,6 @@
-flask
+Flask
 numpy
 easyocr
-imutils
 opencv-python
 Pillow
 gunicorn
