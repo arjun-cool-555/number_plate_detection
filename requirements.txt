@@ -4,7 +4,7 @@ numpy
 easyocr
 opencv-contrib-python==4.6.0.66
 opencv-python==4.6.0.66
-opencv-python-headless==4.5.2.52
+opencv-python-headless==4.5.1.48
 Pillow
 gunicorn
 torch==1.11.0+cpu
