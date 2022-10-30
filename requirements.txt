@@ -5,6 +5,6 @@ easyocr
 opencv-contrib-python==4.6.0.66
 opencv-python==4.6.0.66
 Pillow
-gunicorn
+gunicorn==20.0.4
 torch==1.11.0+cpu
 torchvision==0.12.0+cpu
