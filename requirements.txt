@@ -1,10 +1,18 @@
+-f https://download.pytorch.org/whl/torch_stable.html
 Flask
 numpy
 easyocr
 opencv-contrib-python==4.6.0.66
 opencv-python==4.6.0.66
+<<<<<<< HEAD
 opencv-python-headless==4.5.2.52
 Pillow
 gunicorn
 torch==1.8.1+cpu
 torchvision==0.9.1+cpu
+=======
+Pillow
+gunicorn
+torch==1.11.0+cpu
+torchvision==0.12.0+cpu
+>>>>>>> 4d3ebaa93be4f026439b2f6aa5cf73cf0621b205
